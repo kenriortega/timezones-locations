@@ -4,7 +4,8 @@ import { TimeZoneSearch } from "./TimeZone/components/Search/TimeZoneSearch";
 
 export const TimeZonesApp = () => {
 
-  const [timeZones, setTimeZones] = useState(["America/Argentina/Salta", "Africa/Cairo"])
+  const currentTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone
+  const [timeZones, setTimeZones] = useState([currentTimeZone])
 
   const handleAddTZ = (timeZone = "") => {
     setTimeZones(timeZones => timeZones.concat(timeZone))
@@ -17,15 +18,19 @@ export const TimeZonesApp = () => {
   }
   return (
     <>
-      <header className="">
-        <h1>Wellcome to TimeZone UI</h1>
+      <header className="header-timezone">
+        <h1>TimeZone Finder</h1>
+        <TimeZoneSearch onSelect={handleAddTZ} />
       </header>
-      <TimeZoneSearch onSelect={handleAddTZ} />
-      <section className="grid-card-timezone">
-        {timeZones.map(timeZone => (
-          <TimeZoneCard key={timeZone} timeZone={timeZone} onClose={handleRemoveTZ} />
-        ))}
-      </section>
+
+      <main className="main-timezone">
+        <section className="grid-card-timezone">
+          {timeZones.map(timeZone => (
+            <TimeZoneCard key={timeZone} timeZone={timeZone} onClose={handleRemoveTZ} />
+          ))}
+        </section>
+      </main>
+
       <footer>
         <p>Power by @kenriortega</p>
       </footer>

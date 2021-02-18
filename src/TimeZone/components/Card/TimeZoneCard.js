@@ -14,13 +14,17 @@ const TimeZoneCard = ({ timeZone, onClose }) => {
         <>
             {status === "pending" && <small>Loading...</small>}
             {status === "rejected" && <small className="status-rejected">Something failed</small>}
-            {status === "resolved" && data && <div className="item-card-timezone">
-                <h3>{timeZone}</h3>
-                {onClose && <button onClick={() => onClose(timeZone)}>X</button>}
-                <small>ip: {data.client_ip}</small>
-                <small>time: {data.datetime}</small>
-                <small>week: {data.week_number}</small>
-                <small>day of year: {data.day_of_year}</small>
+            {status === "resolved" && data && <div className="card-timezone">
+                <div className="card-timezone-header">
+                    <h4>{timeZone}</h4>
+                    {onClose && <button className="button-on-close" onClick={() => onClose(timeZone)}>X</button>}
+                </div>
+                <div className="card-timezone-area-numbers">
+                    <div className="item-card-timezone">week: {data.week_number}</div>
+                    <div className="item-card-timezone">day of year: {data.day_of_year}</div>
+                </div>
+                <div className="item-card-timezone">ip: <code>{data.client_ip}</code></div>
+                <small className="item-card-timezone">{data.datetime.split('.')[0]}</small>
             </div>}
         </>
     )

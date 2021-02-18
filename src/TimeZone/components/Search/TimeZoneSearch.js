@@ -35,7 +35,7 @@ export const TimeZoneSearch = ({ onSelect }) => {
                         ))
                         .slice(0, 10)
                         .map((timezone) => (
-                            <article
+                            <article className="article-timezone"
                                 key={timezone}
                                 onClick={() => handleSelect(timezone)}
                             >
