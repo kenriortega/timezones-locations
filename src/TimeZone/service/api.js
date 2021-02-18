@@ -1,6 +1,7 @@
 import axios from "axios"
 
 const API_URL = `http://worldtimeapi.org/api`
+
 export default {
     list: () =>
         axios.get(`${API_URL}/timezone`).then(res => res.data),
