@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import api from '../../service/api'
+import calendar from '../../img/calendar.svg'
+import close from '../../img/close.svg'
+import time from '../../img/time.svg'
 const TimeZoneCard = ({ timeZone, onClose }) => {
     const [data, setData] = useState(null)
     const [status, setStatus] = useState("pending") // resolved(ok)|rejected(BAD)|pending(default)
@@ -12,20 +15,28 @@ const TimeZoneCard = ({ timeZone, onClose }) => {
     }, [timeZone])
     return (
         <>
-            {status === "pending" && <small>Loading...</small>}
-            {status === "rejected" && <small className="status-rejected">Something failed</small>}
-            {status === "resolved" && data && <div className="card-timezone">
-                <div className="card-timezone-header">
-                    <h4>{timeZone}</h4>
-                    {onClose && <button className="button-on-close" onClick={() => onClose(timeZone)}>X</button>}
+            {status === "pending" && <small className="alert-pending">Loading...</small>}
+            {status === "rejected" && <small className="alert-failed">Something failed :(</small>}
+            {status === "resolved" && data &&
+                <div className="card tz">
+                    <div className="card-header">
+                        <img src={calendar} />
+                        <p>{timeZone} </p>
+
+                        <img onClick={() => onClose(timeZone)} src={close} />
+                    </div>
+                    <div className="card-body">
+
+                        <h1>{data.week_number}w/{data.day_of_year}d</h1>
+
+                        <p>IP: {data.client_ip}</p>
+                    </div>
+                    <div className="card-footer">
+                        <img src={time} />
+                        <p>{data.datetime.split('.')[0]}</p>
+                    </div>
                 </div>
-                <div className="card-timezone-area-numbers">
-                    <div className="item-card-timezone">week: {data.week_number}</div>
-                    <div className="item-card-timezone">day of year: {data.day_of_year}</div>
-                </div>
-                <div className="item-card-timezone">ip: <code>{data.client_ip}</code></div>
-                <small className="item-card-timezone">{data.datetime.split('.')[0]}</small>
-            </div>}
+            }
         </>
     )
 }
