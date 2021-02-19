@@ -19,14 +19,15 @@ export const TimeZoneSearch = ({ onSelect }) => {
     }, [])
 
     if (status === "pending") {
-        return <input type="text" disabled value="Loading timeZones..." />
+        return <input className="searchTerm" placeholder="search TZ..." type="text" disabled value="Loading timeZones..." />
     }
     if (status == "rejected") {
-        return <input type="text" disabled value="Failed to load timeZones..." />
+        return <input className="searchTerm" placeholder="search TZ..." type="text" disabled value="Failed to load timeZones..." />
     }
     return (
-        <div>
-            <input type="text" value={query} onChange={(e) => setQuery(e.target.value)} />
+        <div className="search-box">
+            <input className="searchTerm" placeholder="search TZ..." type="text" value={query} onChange={(e) => setQuery(e.target.value)} />
+
             {timeZones.length && query && (
                 <section>
                     {timeZones
