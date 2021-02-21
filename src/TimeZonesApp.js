@@ -1,17 +1,14 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import SchemeColorSwitcher from "./components/SchemeSwitcherColor";
-import api from "./Ipinfo/service/api";
 import TimeZoneCard from "./TimeZone/components/Card/TimeZoneCard"
 import { TimeZoneSearch } from "./TimeZone/components/Search/TimeZoneSearch";
-
+import IpInfoMapBox from "./Ipinfo/components/MapBox/IpInfoMapBox";
 
 export const TimeZonesApp = () => {
 
   const currentTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone
   const [timeZones, setTimeZones] = useState([currentTimeZone])
   const [location, setLocation] = useState(null)
-  const [data, setData] = useState(null)
-  const [status, setStatus] = useState("pending") // resolved(ok)|rejected(BAD)|pending(default)
 
   const handleAddTZ = (timeZone = "") => {
     setTimeZones(timeZones => timeZones.concat(timeZone))
@@ -23,18 +20,9 @@ export const TimeZonesApp = () => {
     )
   }
   const handleFindIPInfo = (_location) => {
-    setLocation(_location)
+    setLocation(_location.split("/")[1])
   }
-  useEffect(() => {
-    if (location) {
 
-      api.fetchByIP(location.split("/")[1])
-        .then(setData)
-        .then(() => setStatus("resolved"))
-        .catch(() => setStatus("rejected"))
-    }
-    console.log(data)
-  }, [location])
 
   return (
     <>
@@ -60,12 +48,7 @@ export const TimeZonesApp = () => {
           ))}
         </section>
         <section>
-          {status === "resolved" && data &&
-            <div>
-              <div>{data.geo.latitude}</div>
-              <div>{data.geo.longitude}</div>
-            </div>
-          }
+          {location !== null && <IpInfoMapBox location={location} />}
         </section>
       </main>
 
