@@ -3,7 +3,7 @@ import api from '../../service/api'
 import calendar from '../../img/calendar.svg'
 import close from '../../img/close.svg'
 import time from '../../img/time.svg'
-const TimeZoneCard = ({ timeZone, onClose }) => {
+const TimeZoneCard = ({ timeZone, onClose, onSelectLocation }) => {
     const [data, setData] = useState(null)
     const [status, setStatus] = useState("pending") // resolved(ok)|rejected(BAD)|pending(default)
 
@@ -21,7 +21,7 @@ const TimeZoneCard = ({ timeZone, onClose }) => {
                 <div className="card tz">
                     <div className="card-header">
                         <img src={calendar} />
-                        <p>{timeZone} </p>
+                        <p onClick={() => onSelectLocation(timeZone)}>{timeZone} </p>
 
                         <img onClick={() => onClose(timeZone)} src={close} />
                     </div>
