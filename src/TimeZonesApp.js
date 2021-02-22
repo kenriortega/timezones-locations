@@ -24,6 +24,7 @@ export const TimeZonesApp = () => {
   }
 
 
+
   return (
     <>
       <header className="header-timezone">
@@ -47,9 +48,13 @@ export const TimeZonesApp = () => {
               onSelectLocation={handleFindIPInfo} />
           ))}
         </section>
-        <section>
-          {location !== null && <IpInfoMapBox location={location} />}
-        </section>
+
+        {timeZones.length !== 0 &&
+          <section>
+            {location !== null && <IpInfoMapBox location={location} />}
+          </section>
+        }
+
       </main>
 
       <footer className="footer">
