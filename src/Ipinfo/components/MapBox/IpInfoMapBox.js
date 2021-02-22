@@ -43,7 +43,7 @@ const IpInfoMapBox = ({ location }) => {
     return (
 
 
-        <div>
+        <div className="map-container">
             <p>Last Location: {location}</p>
             <div id="mapContainer" className="map"></div>
         </div>

@@ -440,5 +440,10 @@ input:checked + label:after {
     padding-bottom:56.25%;
     position:relative;
     height:0;
-    border: 5px solid var(--light-bg-card);
+    border: 5px solid var(--light-blue-text);
+  }
+  .map-container p{
+    color: var(--light-blue-text);
+    font-size: 1.4em;
+    font-weight: bold;
   }
