@@ -174,9 +174,10 @@ main {
   font-size: 1.5rem;
   color: var(--light-blue-text);
 }
-.card-header p:hover{
+ .show-map:hover{
   cursor: pointer;
   color: var(--text-secundary-dark);
+  font-size: 2em;
 }
 .card-body {
   grid-column: 1/4;
@@ -429,4 +430,15 @@ input:checked + label:after {
     border-radius: 10px;
     background-color: #d5f7f7;
     box-shadow: inset 0 0 6px rgba(0,0,0,.4);
+  }
+
+  /* MAPBOX */
+.map {
+    width: 100%;
+    height: 400px;
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+    border: 5px solid var(--light-bg-card);
   }

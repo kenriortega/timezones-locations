@@ -1,9 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import api from '../../service/api'
+import mapboxgl from 'mapbox-gl';
+import 'mapbox-gl/dist/mapbox-gl.css'
+
+
+
 const IpInfoMapBox = ({ location }) => {
+    mapboxgl.accessToken = process.env.REACT_APP_MAP_BOX_TOKEN;
     const [data, setData] = useState(null)
     const [status, setStatus] = useState("pending") // resolved(ok)|rejected(BAD)|pending(default)
-
     useEffect(() => {
         if (location) {
 
@@ -14,18 +19,36 @@ const IpInfoMapBox = ({ location }) => {
         }
 
     }, [location])
+
+    // initialize map when component mounts
+    useEffect(() => {
+        if (data) {
+            let map = new mapboxgl.Map({
+                container: "mapContainer",
+                style: "mapbox://styles/mapbox/streets-v11",
+                center: [data.geo.longitude, data.geo.latitude],
+                zoom: 9,
+            });
+            let marker = new mapboxgl.Marker()
+                .setLngLat([data.geo.longitude, data.geo.latitude])
+                .addTo(map);
+            const nav = new mapboxgl.NavigationControl();
+            map.addControl(nav, "top-right");
+
+
+        }
+
+    }, [data]);
+
     return (
+
+
         <div>
-            {/* TODO: validated others status for the app */}
-            <h1>Aqui va un mapa para esta location : {location}</h1>
-            {status === "resolved" && data &&
-                <div>
-                    {/* TODO: show the map mobile and web views */}
-                    <div>{data.geo.latitude}</div>
-                    <div>{data.geo.longitude}</div>
-                </div>
-            }
+            <p>Last Location: {location}</p>
+            <div id="mapContainer" className="map"></div>
         </div>
+
+
     )
 }
 
