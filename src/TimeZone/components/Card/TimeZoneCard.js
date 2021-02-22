@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import api from '../../service/api'
-import calendar from '../../img/calendar.svg'
+// import calendar from '../../img/calendar.svg'
 import close from '../../img/close.svg'
 import time from '../../img/time.svg'
+import map from '../../img/map.svg'
 const TimeZoneCard = ({ timeZone, onClose, onSelectLocation }) => {
     const [data, setData] = useState(null)
     const [status, setStatus] = useState("pending") // resolved(ok)|rejected(BAD)|pending(default)
@@ -20,16 +21,16 @@ const TimeZoneCard = ({ timeZone, onClose, onSelectLocation }) => {
             {status === "resolved" && data &&
                 <div className="card tz">
                     <div className="card-header">
-                        <img src={calendar} />
-                        <p onClick={() => onSelectLocation(timeZone)}>{timeZone} </p>
+                        <img className="show-map" onClick={() => onSelectLocation(timeZone)} src={map} />
+                        <p >{timeZone} </p>
 
                         <img onClick={() => onClose(timeZone)} src={close} />
                     </div>
                     <div className="card-body">
 
-                        <h1>{data.week_number}w/{data.day_of_year}d</h1>
+                        <h1>{data.week_number}w</h1>
 
-                        <p>IP: {data.client_ip}</p>
+                        <p>{data.day_of_year}day</p>
                     </div>
                     <div className="card-footer">
                         <img src={time} />
