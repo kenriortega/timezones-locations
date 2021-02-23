@@ -2,15 +2,14 @@
 
 ## Description
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-This project was created to make and simple UI interfaces related to [worldtimeapi.org](http://worldtimeapi.org/). In this week, i learn some web technologies e.g:
+The aims for this proyect are improve knowleges as a Frontend Developer. For make thissolutions i taked ideas from two existing projects from [frontendmentor](http://worldtimeapi.org/), and the main idea was taked from [coderio challenge](https://github.com/goncy/coderio-challenge).In this week, i learn some web technologies e.g:
 
-- react.js
-- axios/fetch
-- flexbox/grid
-- vercel deploy
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).For build the UI i used flexbox and grid css.For the api management i used axios as a javascript client and make request to the following API:
+- [worldtimeapi.org](http://worldtimeapi.org/)
+- [api.ipgeolocation.io](https://api.ipgeolocation.io/timezone)
 
-
+In this solutions the user need to search a timezone in the input box, and the web app show on a card simple information related for this search criteria, then when the user click on a card the app execute a request to the [api.ipgeolocation.io](https://api.ipgeolocation.io/timezone)
+and save the latitude & logitude for this timezone and paint in a map using [mapbox-gl](https://mapbox.com)
 ## Available Scripts
 
 In the project directory, you can run:
