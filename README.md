@@ -6,9 +6,9 @@ The aims for this proyect are improve knowleges as a Frontend Developer. For mak
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).For build the UI i used flexbox and grid css.For the api management i used axios as a javascript client and make request to the following API:
 - [worldtimeapi.org](http://worldtimeapi.org/)
-- [api.ipgeolocation.io](https://api.ipgeolocation.io/timezone)
+- [app.ipgeolocation.io](https://app.ipgeolocation.io)
 
-In this solutions the user need to search a timezone in the input box, and the web app show on a card simple information related for this search criteria, then when the user click on a card the app execute a request to the [api.ipgeolocation.io](https://api.ipgeolocation.io/timezone)
+In this solutions the user need to search a timezone in the input box, and the web app show on a card simple information related for this search criteria, then when the user click on a card the app execute a request to the [api.ipgeolocation.io](https://api.ipgeolocation.io)
 and save the latitude & logitude for this timezone and paint in a map using [mapbox-gl](https://mapbox.com)
 ## Available Scripts
 
