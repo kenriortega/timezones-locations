@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const API_URL = `http://worldtimeapi.org/api`
+const API_URL = `https://worldtimeapi.org/api`
 
 export default {
     list: () =>
