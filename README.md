@@ -2,21 +2,21 @@
 
 ## Description
 
-The aims for this proyect are improve knowleges as a Frontend Developer. For make thissolutions i taked ideas from two existing projects from [frontendmentor](http://worldtimeapi.org/), and the main idea was taked from [coderio challenge](https://github.com/goncy/coderio-challenge).In this week, i learn some web technologies e.g:
+The aims for this proyect are improve knowleges as a Frontend Developer. For make this solutions i taked ideas from two existing projects from [frontendmentor](http://worldtimeapi.org/), and the main idea was taken from [coderio challenge](https://github.com/goncy/coderio-challenge).In this week, i learn some web technologies e.g:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).For build the UI i used flexbox and grid css.For the api management i used axios as a javascript client and make request to the following API:
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).For building the UI i used flexbox and grid css.For the api management i used axios as a javascript client and make request to the following API:
 - [worldtimeapi.org](http://worldtimeapi.org/)
 - [app.ipgeolocation.io](https://app.ipgeolocation.io)
 
-In this solutions the user need to search a timezone in the input box, and the web app show on a card simple information related for this search criteria, then when the user click on a card the app execute a request to the [api.ipgeolocation.io](https://api.ipgeolocation.io)
-and save the latitude & logitude for this timezone and paint in a map using [mapbox-gl](https://mapbox.com)
+In this solution the user need to search a timezone in the input box, and the web app show on a card simple information related to this search criteria, then when the user clicks on a card the app execute a request to the [api.ipgeolocation.io](https://api.ipgeolocation.io)
+and save the latitude & logitude for this timezone and paint it in a map using [mapbox-gl](https://mapbox.com)
 ## Available Scripts
 
 In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
+Runs the app in development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\

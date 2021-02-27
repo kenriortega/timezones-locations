@@ -2,7 +2,7 @@
 /**************** Variable **********/
 /************************************/
 :root {
-  /******* Common Variable******/
+  /******* Common Variables******/
   --lime-green: #1db489;
   --bright-red: #dc414c;
   --facebook: #178ff5;
@@ -11,16 +11,16 @@
   --youtube: #c4032a;
   --timezone: #53483dff;
 
-      /* alertas */
-      --alert-failed: #e63946ff;
-      --alert-info: #457b9dff;
-      --alert-success: rgb(57, 150, 77);
-      --alert-warning: rgb(228, 231, 36);
+  /* alerts */
+  --alert-failed: #e63946ff;
+  --alert-info: #457b9dff;
+  --alert-success: rgb(57, 150, 77);
+  --alert-warning: rgb(228, 231, 36);
 
-      /* texts colors */
-      --text-secondary-light: #d4aa7dff;
-      --text-primary-dark: #7e6952ff;
-      --text-secundary-dark: #efd09eff;
+  /* texts colors */
+  --text-secondary-light: #d4aa7dff;
+  --text-primary-dark: #7e6952ff;
+  --text-secundary-dark: #efd09eff;
   /********** Light Theme ********/
 
   --light-toggle: #aeb3cb;
@@ -56,7 +56,7 @@ html[data-theme="dark"] {
     --dark-blue-text: #ffffff;
     --hover: #40486d;
     /* --light-blue-text: #ffffff; */
-  /* } */
+/* } */
 /* }  */
 /*********** For animation *********/
 html.transition,
@@ -95,28 +95,28 @@ header .text {
   color: var(--light-blue-text);
   font-weight: bold;
 }
-  /* search input */
+/* search input */
 
 .searchTerm {
-    margin-top: 20px;
-    width: 255px;
-    border: 3px solid var(--timezone);
-    background-color: var(--light-bg-card);
-    color: var(--light-blue-text);
-    padding: 5px;
-    height: 28px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-radius: .2em;
-    outline: none;
-  }
+  margin-top: 20px;
+  width: 255px;
+  border: 3px solid var(--timezone);
+  background-color: var(--light-bg-card);
+  color: var(--light-blue-text);
+  padding: 5px;
+  height: 28px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 0.2em;
+  outline: none;
+}
 
-.article-timezone{
+.article-timezone {
   cursor: pointer;
   color: var(--light-blue-text);
 }
-.article-timezone:hover{
+.article-timezone:hover {
   font-size: 2em;
   color: var(--light-blue-text);
 }
@@ -137,15 +137,14 @@ main {
   font-weight: bold;
 }
 /* alerts */
-.alert-failed{
+.alert-failed {
   font-size: 2em;
   color: var(--alert-failed);
 }
-.alert-pending{
+.alert-pending {
   font-size: 2em;
   color: var(--light-blue-text);
 }
-
 
 /* Card Section */
 .card-section {
@@ -155,7 +154,7 @@ main {
   height: 20rem;
   margin-top: 50px;
   display: grid;
-  grid-template-columns: repeat(auto-fill,4, 1fr);
+  grid-template-columns: repeat(auto-fill, 4, 1fr);
   background: var(--light-bg-card);
   border-radius: 6px;
 }
@@ -174,7 +173,7 @@ main {
   font-size: 1.5rem;
   color: var(--light-blue-text);
 }
- .show-map:hover{
+.show-map:hover {
   cursor: pointer;
   color: var(--text-secundary-dark);
   font-size: 2em;
@@ -193,7 +192,6 @@ main {
   color: var(--light-blue-text);
   text-transform: uppercase;
   letter-spacing: 2px;
-  
 }
 
 .card-footer {
@@ -250,7 +248,7 @@ input:checked + label {
 input:checked + label:after {
   right: calc(100% - 45px);
   transform: translateX(-100%);
-} 
+}
 
 /********** TIMEZONE Card Style *************************/
 
@@ -374,76 +372,76 @@ input:checked + label:after {
   }
 }
 
-  /* footer */
-  .footer {
-    align-items: center;
-    background: #fff;
-    border-top: 1px solid #eaeaea;
-    display: flex;
-    font-size: 1.5em;
-    line-height: 1.5rem;
-    margin-top: 4rem;
-    padding: 2rem .5rem;
-    justify-content: center;
-    width: 100%;
-    background-color: var(--light-theme-bg);
-    color: var(--light-blue-text);
-  }
+/* footer */
+.footer {
+  align-items: center;
+  background: #fff;
+  border-top: 1px solid #eaeaea;
+  display: flex;
+  font-size: 1.5em;
+  line-height: 1.5rem;
+  margin-top: 4rem;
+  padding: 2rem 0.5rem;
+  justify-content: center;
+  width: 100%;
+  background-color: var(--light-theme-bg);
+  color: var(--light-blue-text);
+}
+.footer div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.footer span {
+  display: none;
+}
+.footer div > * {
+  margin: 0 4px;
+}
+.footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px dashed rgb(224, 242, 255);
+}
+.footer a:hover {
+  border-bottom: 1px dashed var(--light-blue-text);
+  cursor: pointer;
+}
+@media (min-width: 700px) {
   .footer div {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    flex-direction: row;
   }
   .footer span {
-    display: none;
+    display: block;
   }
-  .footer div > * {
-    margin: 0 4px;
-  }
-  .footer a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 1px dashed rgb(224, 242, 255);
-  }
-  .footer a:hover {
-    border-bottom: 1px dashed var(--light-blue-text);
-    cursor: pointer;
-  }
-  @media (min-width: 700px) {
-    .footer div {
-      flex-direction: row;
-    }
-    .footer span {
-      display: block;
-    }
-  }
-  ::-webkit-scrollbar{
-    width:8px;
-  }
-  ::-webkit-scrollbar-thumb{
-    border-radius: 10px;
-    background-color: #2196F3;
-    box-shadow: inset 0 0 6px rgba(0,0,0,.5);
-  }
-  ::-webkit-scrollbar-track{
-    border-radius: 10px;
-    background-color: #d5f7f7;
-    box-shadow: inset 0 0 6px rgba(0,0,0,.4);
-  }
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #2196f3;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #d5f7f7;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.4);
+}
 
-  /* MAPBOX */
+/* MAPBOX */
 .map {
-    width: 100%;
-    height: 400px;
-    overflow:hidden;
-    padding-bottom:56.25%;
-    position:relative;
-    height:0;
-    border: 5px solid var(--light-blue-text);
-  }
-  .map-container p{
-    color: var(--light-blue-text);
-    font-size: 1.4em;
-    font-weight: bold;
-  }
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+  border: 5px solid var(--light-blue-text);
+}
+.map-container p {
+  color: var(--light-blue-text);
+  font-size: 1.4em;
+  font-weight: bold;
+}
