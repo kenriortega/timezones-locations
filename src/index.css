@@ -227,7 +227,9 @@ label {
   cursor: pointer;
   width: 5.2rem;
   height: 2.7rem;
-  background: var(--light-toggle);
+  /* background: var(--light-toggle); */
+  background: linear-gradient(90deg, #378fe6 0%, #3eda82 100%);
+
   border-radius: 100px;
   position: relative;
   align-self: center;
@@ -245,7 +247,8 @@ label:after {
   transition: 0.3s;
 }
 input:checked + label {
-  background: linear-gradient(90deg, #378fe6 0%, #3eda82 100%);
+  background: var(--light-toggle);
+
 }
 input:checked + label:after {
   right: calc(100% - 45px);

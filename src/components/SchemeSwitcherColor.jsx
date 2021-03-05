@@ -1,9 +1,5 @@
 import { useState, useEffect } from "react"
-const SCHEMES = {
-    SYSTEM: 'system',
-    DARK: 'dark',
-    LIGHT: 'light'
-}
+
 
 let trans = () => {
 
@@ -13,9 +9,9 @@ let trans = () => {
     }, 1000);
 };
 export default function SchemeColorSwitcher() {
-    const [scheme, setScheme] = useState()
+    const [scheme, setScheme] = useState(null)
     const handleChange = (e) => {
-        setScheme(scheme => !scheme)
+        setScheme(e.target.checked)
     }
     useEffect(() => {
         if (scheme) {
