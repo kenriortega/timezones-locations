@@ -36,7 +36,6 @@ export const TimeZonesApp = () => {
 
       <main className="main-timezone">
         <div className="main-title">
-          <p>Dark Mode</p>
           <SchemeColorSwitcher />
         </div>
         <section className="card-section">
